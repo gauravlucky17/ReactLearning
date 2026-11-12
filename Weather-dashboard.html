@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <!-- bootstrap lib -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- React lib -->
+    <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="./node_modules/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        //Index component
+        function WeatherIndex() {
+
+            return (
+                <div className="container-fluid row">
+                    <div className="col-2">
+                        {/* Accessing a component inside another component */}
+                        <SideBar />
+                    </div>
+                    <div className="col-10">
+                        <Header />
+                        <WeatherCard />
+                    </div>
+                </div>
+            )
+        }
+        function SideBar() {
+            return (
+                <nav className="p-2">
+                    <div className="fs-4 fw-bold text-primary mb-3"><span className="bi bi-cloud">Weather App</span></div>
+                    <ul className="list-group">
+                        <li className="list-group-item list-group-item-primary"><span className="bi bi-columns-gap"> Dashboard</span></li>
+                        <li className="list-group-item list-group-item-primary"><span className="bi bi-broadcast"> Radar & maps</span></li>
+                        <li className="list-group-item list-group-item-primary"><span className="bi bi-clock-history">  Hourly</span></li>
+                        <li className="list-group-item list-group-item-primary"><span className="bi bi-calendar-date"> 7 Day Outlook</span></li>
+                        <li className="list-group-item list-group-item-primary"><span className="bi bi-wind"> Air Quality</span></li>
+                    </ul>
+                    <button className="btn btn-primary w-100 mt-4">Logout</button>
+                </nav>
+            )
+        }
+
+        function Header() {
+            return (
+                <header className="p-3 d-flex align-items-center bg-light justify-content-between">
+                    <div className="w-50">
+                        <div className="input-group">
+                            <input type="text" placeholder="Search your city for weather" className="form-control" />
+                            <button className="btn btn-primary bi bi-search">Search</button>
+                        </div>
+                    </div>
+                    <div className="fs-5">
+                        <span className="bi bi-heart"> Wishlist </span>
+                        <span className="bi bi-gift"> offers </span>
+                        <span className="bi bi-person"> Profile </span>
+                    </div>
+                </header>
+            )
+        }
+
+
+        function WeatherCard() {
+            return (
+                <div className="card mt-4 bg-dark text-white w-50" >
+                    <div className="card-header bg-info d-flex justify-content-between">
+                        <div>
+                            <div className="fs-3 fw-bold"> Delhi, India</div>
+                            <div> 11-Nov-2026</div>
+                        </div>
+                        <div>
+                            Live Weather
+                        </div>
+                    </div>
+                    <div className="card-body d-flex justify-content-between">
+                        <div className="fs-1 fw-bold"> 30°C</div>
+
+                    {/* <div><span className="bi bi-cloud-rain"> Raining</span></div>*/}
+                        <div><span className="bi bi-sun"> Sunny</span></div>
+
+                    </div>
+                    <div className="card-footer bg-danger">
+                        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                        
+                </div>
+                </div>
+
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<WeatherIndex />);
+    </script>
+
+</head>
+
+<body>
+    <noscript>please enable javascript to run this app</noscript>
+    <div id="root"></div>
+</body>
+
+</html>

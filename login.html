@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 2px black;
+            margin: 20px;
+            width: 400px;
+        }
+    </style>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="./node_modules/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" >
+        function Login()
+        {
+            return(
+                <form className="form-container">
+                    <dl>
+<dt>Username</dt>
+<dd><input type="text" className="form-control" name="username" /></dd>
+<dt>Password</dt>
+<dd><input type="password" className="form-control" name="password" /></dd>
+                        </dl>
+                        <button type="submit" className="btn btn-danger w-100">Login</button>
+                    </form>
+            )
+        }
+        const root=ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<section><Login/></section>);
+        </script>
+</head>
+<body>
+    <noscript>please enable javascript to run this app</noscript>
+    <div id="root"></div>
+</body>
+</html>
